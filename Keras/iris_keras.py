@@ -62,9 +62,7 @@ ytest = datatest_array[:,4]
 #get prediction
 classes = model.predict_classes(xtest, batch_size=120)
 
-"""
-SECTION 4 : Get Accuration
-"""
+#get accuration
 import numpy as np
 accuration = np.sum(classes == ytest)/30.0 * 100
 

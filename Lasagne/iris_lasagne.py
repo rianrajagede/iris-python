@@ -33,29 +33,45 @@ output layer : 3 neuron, represents the class of Iris, Softmax Layer
 
 optimizer = stochastic gradient descent with no batch-size
 loss function = categorical cross entropy
-learning rate = default from keras.optimizer.SGD, 0.01
+learning rate = 0.01
 epoch = 500
 """
-from keras.models import Sequential
-from keras.layers import Dense, Activation
-from keras.utils import np_utils
+import theano
+import theano.tensor as T
+import numpy as np
+import lasagne
 
-#change target format
-ytrain = np_utils.to_categorical(ytrain) 
+#initiate theano variable
+input_val = T.fmatrix("inputs")
+target_val = T.ivector("targets")
 
 #build model
-model = Sequential()
-model.add(Dense(output_dim=10, input_dim=4))
-model.add(Activation("relu"))
-model.add(Dense(output_dim=3))
-model.add(Activation("softmax"))
+input_layer  = lasagne.layers.InputLayer(shape=xtrain.shape, input_var=input_val)
+hidden_layer = lasagne.layers.DenseLayer(input_layer, num_units=10,nonlinearity=lasagne.nonlinearities.rectify)   
+output_layer = lasagne.layers.DenseLayer(hidden_layer, num_units=3,nonlinearity=lasagne.nonlinearities.softmax)   
+output_val =  output_layer.get_output()
 
-#choose optimizer and loss function
-model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+#choose objective/loss function 
+objective = lasagne.objectives.Objective(
+                output_layer,
+                loss_function=lasagne.objectives.categorical_crossentropy)                
+loss = objective.get_loss(target=target_val)
+
+#choose optimizer
+all_params = lasagne.layers.get_all_params(output_layer)
+updates = lasagne.updates.sgd(loss, all_params, learning_rate=0.01)
+
+#compile theano function
+train_model = theano.function([input_val,target_val],loss,allow_input_downcast=True,updates=updates)
+test_model = theano.function([input_val],output_val,allow_input_downcast=True)
 
 #train
-model.fit(xtrain, ytrain, nb_epoch=500, batch_size=120)
-
+for _ in xrange(500):   
+    loss_val = train_model(xtrain,ytrain)
+    prediction = np.argmax(test_model(xtrain),axis=1)
+    accuration = 100*np.mean(ytrain == prediction)
+    print "Epoch " + str(_+1) + "/" + str(500) + " - loss: " + str(loss_val) + " - accuration: " + str(accuration)
+    
 """
 SECTION 3 : Testing model
 """
@@ -76,14 +92,12 @@ xtest= datatest_array[:,:4]
 ytest = datatest_array[:,4]
 
 #get prediction
-classes = model.predict_classes(xtest, batch_size=120)
+prediction = np.argmax(test_model(xtest),axis=1)
 
 #get accuration
-import numpy as np
-accuration = np.sum(classes == ytest)/30.0 * 100
-
-print "Test Accuration : " + str(accuration) + '%'
+accuration = 100*np.mean(ytest == prediction)
+print "Test Accuration : "+str(accuration)
 print "Prediction :"
-print classes
+print prediction
 print "Target :"
 print np.asarray(ytest,dtype="int32")

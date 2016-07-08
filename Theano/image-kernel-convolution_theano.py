@@ -1,3 +1,6 @@
+#SIMPLE IMAGE-KERNEL (CONVOLUTION) OPERATION
+#created for stackoverflow case: http://stackoverflow.com/questions/38144525/how-to-perform-stencil-computations-element-wise-on-a-matrix-in-theano/38196969#38196969s
+
 import numpy as np
 import theano
 import theano.tensor as T

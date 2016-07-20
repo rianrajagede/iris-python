@@ -1,7 +1,7 @@
 """
 SECTION 1 : Load and setup data for training
 
-the datasets has separated to two file from originai datasets:
+the datasets separated in two files from originai datasets:
 iris_train.csv = datasets for training purpose, 80% from the original data
 iris_test.csv  = datasets for testing purpose, 20% from the original data
 """

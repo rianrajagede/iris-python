@@ -1,5 +1,7 @@
-#SIMPLE IMAGE-KERNEL (CONVOLUTION) OPERATION
-#created for stackoverflow case: http://stackoverflow.com/questions/38144525/how-to-perform-stencil-computations-element-wise-on-a-matrix-in-theano/38196969#38196969s
+# SIMPLE IMAGE-KERNEL (CONVOLUTION) OPERATION
+# created for stackoverflow case: http://stackoverflow.com/questions/38144525/how-to-perform-stencil-computations-element-wise-on-a-matrix-in-theano/38196969#38196969s
+# PLEASE READ THE QUESTION CAREFULLY
+# THIS PROGRAM IS A SOLUTION OF THE QUESTION
 
 import numpy as np
 import theano
@@ -20,13 +22,15 @@ img = [[[1, 2, 3, 4],
        [3, 3, 3, 3]]]
 
 # separate and reshape each channel to 4D 
-# separated because convolution works on each channel only
+# because convolution works on each channel only
+# (from question's specificaton)
 R = np.asarray([[img[0]]], dtype='float32')
 G = np.asarray([[img[1]]], dtype='float32')
 B = np.asarray([[img[2]]], dtype='float32')       
 
 # 4D kernel from the original : [1,0,1]
 # rotated because convolution works only on column
+# (from question's specificaton)
 kernel = np.asarray([[[[1],[0],[1]]]], dtype='float32')
 
 # theano convolution

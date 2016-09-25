@@ -16,16 +16,14 @@ class Node:
     def g(self): 
         return self.step
     
-	# Manhattan Distance
-    def h(self):
-        k = 1
-		
-		# List of correct position each piece
-        locm = locp = [[0,0]]*9
+    def h(self):	
+	locm = locp = [[0,0]]*9
+	
+	# List of correct position each piece
         locp[1:] = [[(i-1)/3,(i-1)%3] for i in xrange(1,9)] 
         locp[0] = [2,2]
 		
-		# List of current position each piece
+	# List of current position each piece
         locm = [[self.val.index(i)/3, self.val.index(i)%3] for i in xrange(9)] 
         return sum([abs(locp[i][1]-locm[i][1]) + abs(locp[i][0]-locm[i][0]) \
 				for i in xrange(9)])

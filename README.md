@@ -1,16 +1,18 @@
 # Simple Sample Codes for Machine Learning Tutorial
-Keras
-- [Simple Neural Net for Iris dataset][iris_keras]
-- [Simple Neural Net for XOR problem][xor_keras]
+this is a collection of simple and easy to read program for machine learning. Using many library you can see the difference between library for the same usage.
 
-Lasagne
-- [Simple Neural Net for Iris dataset][iris_lasagne]
+## Keras
+- [Simple Neural Net for Iris dataset using Keras][iris_keras] (Multilayer perceptron model, with one hidden layer)
+- [Simple Neural Net for XOR problem using Keras][xor_keras] (Multilayer perceptron model, with one hidden layer)
 
-Theano
-- [StackOverflowCase: Simple Image-Kernel Operation][imageconv_theano]
+## Lasagne
+- [Simple Neural Net for Iris dataset using Lasagne][iris_lasagne] (Multilayer perceptron model, with one hidden layer)
 
-Pure Python
-- [A* Algorithm for 8 Puzzle][A_star_8puzzle]
+## Only Theano
+- [StackOverflowCase: Simple Image-Kernel Operation using Theano][imageconv_theano]
+
+## Only Python
+- [A* Algorithm for 8 Puzzle using python][A_star_8puzzle]
 
 [iris_keras]:https://github.com/rianrajagede/simplesamplecode/blob/master/Keras/iris_keras.py
 [xor_keras]:https://github.com/rianrajagede/simplesamplecode/blob/master/Keras/xor_keras.py

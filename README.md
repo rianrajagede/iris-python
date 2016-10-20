@@ -19,5 +19,5 @@ this is a collection of simple and easy to read program for machine learning. Us
 [iris_lasagne]:https://github.com/rianrajagede/simplesamplecode/blob/master/Lasagne/iris_lasagne.py
 [imageconv_theano]:https://github.com/rianrajagede/simplesamplecode/blob/master/Theano/image-kernel-convolution_theano.py
 [A_star_8puzzle]:
-https://github.com/rianrajagede/simplesamplecode/blob/master/Pure_Python/8_puzzle_A_star.py
+https://github.com/rianrajagede/simplesamplecode/blob/master/Python/8_puzzle_A_star.py
 

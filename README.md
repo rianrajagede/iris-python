@@ -13,6 +13,7 @@ this is a collection of simple and easy to read program for machine learning. Us
 
 ## Only Python
 - [A* Algorithm for 8 Puzzle using python][A_star_8puzzle]
+- [Simple Neural Net for Iris dataset using Scikit-learn-MLPClassifier][iris_scikit]
 
 [iris_keras]:https://github.com/rianrajagede/simplesamplecode/blob/master/Keras/iris_keras.py
 [xor_keras]:https://github.com/rianrajagede/simplesamplecode/blob/master/Keras/xor_keras.py
@@ -20,4 +21,5 @@ this is a collection of simple and easy to read program for machine learning. Us
 [imageconv_theano]:https://github.com/rianrajagede/simplesamplecode/blob/master/Theano/image-kernel-convolution_theano.py
 [A_star_8puzzle]:
 https://github.com/rianrajagede/simplesamplecode/blob/master/Python/8_puzzle_A_star.py
+[iris_scikit]:https://github.com/rianrajagede/simplesamplecode/blob/master/Python/iris_scikit.py
 

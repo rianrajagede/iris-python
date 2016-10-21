@@ -1,9 +1,5 @@
 """
 SECTION 1 : Load and setup data for training
-
-the datasets separated in two files from originai datasets:
-iris_train.csv = datasets for training purpose, 80% from the original data
-iris_test.csv  = datasets for testing purpose, 20% from the original data
 """
 import pandas as pd
 from sklearn.model_selection import train_test_split

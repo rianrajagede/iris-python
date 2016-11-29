@@ -44,3 +44,13 @@ mlp.fit(X_train, y_train)
 
 # Test the model
 print mlp.score(X_test,y_test)
+
+sl = 5.8
+sw = 4
+pl = 1.2
+pw = 0.2
+data = [sl,sw,pl,pw]
+print mlp.predict(data)
+
+
+

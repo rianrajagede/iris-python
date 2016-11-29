@@ -8,10 +8,10 @@ this is a collection of simple and easy to read program for machine learning. Us
 ## Lasagne
 - [Simple Neural Net for Iris dataset using Lasagne][iris_lasagne] (Multilayer perceptron model, with one hidden layer)
 
-## Only Theano
+## Theano
 - [StackOverflowCase: Simple Image-Kernel Operation using Theano][imageconv_theano]
 
-## Only Python
+## Python
 - [A* Algorithm for 8 Puzzle using python][A_star_8puzzle]
 - [Simple Neural Net for Iris dataset using Scikit-learn-MLPClassifier][iris_scikit]
 
@@ -22,4 +22,3 @@ this is a collection of simple and easy to read program for machine learning. Us
 [A_star_8puzzle]:
 https://github.com/rianrajagede/simplesamplecode/blob/master/Python/8_puzzle_A_star.py
 [iris_scikit]:https://github.com/rianrajagede/simplesamplecode/blob/master/Python/iris_scikit.py
-

@@ -41,7 +41,7 @@ learning rate = 0.01
 epoch = 500
 """
 
-def matrix_mul_bias(A, B, bias): # Fungsi perkalian matrix + bias
+def matrix_mul_bias(A, B, bias): # Fungsi perkalian matrix + bias (untuk Testing)
     C = [[0 for i in xrange(len(B[0]))] for i in xrange(len(A))]    
     for i in xrange(len(A)):
         for j in xrange(len(B[0])):
@@ -81,11 +81,20 @@ alfa = 0.01
 epoch = 500
 neuron = [4, 3, 3] # arsitektur tiap layer
 
-# Initiate weight, random normal antara -1..1
-weight = [[2*random.random()-1 for j in xrange(neuron[1])] for i in xrange(neuron[0])]
-bias = [1 for _ in xrange(neuron[1])]
-weight_2 = [[2*random.random()-1 for j in xrange(neuron[2])] for i in xrange(neuron[1])]
-bias_2 = [1 for _ in xrange(neuron[2])]
+# Initiate weight and bias, random normal antara -1..1
+weight = [[0 for j in xrange(neuron[1])] for i in xrange(neuron[0])]
+weight_2 = [[0 for j in xrange(neuron[2])] for i in xrange(neuron[1])]
+bias = [0 for _ in xrange(neuron[1])]
+bias_2 = [0 for _ in xrange(neuron[2])]
+
+for i in xrange(neuron[0]):
+    for j in xrange(neuron[1]):
+        weight[i][j] = 2*random.random()-1
+
+for i in xrange(neuron[1]):
+    for j in xrange(neuron[2]):
+        weight_2[i][j] = 2*random.random()-1
+
 
 for _ in xrange(epoch):
     cost_total = 0
@@ -143,6 +152,9 @@ res_2 = matrix_mul_bias(res, weight_2, bias)
 preds = []
 for r in res_2:
     preds.append(max(enumerate(r), key=lambda x:x[1])[0])
+
+# Print prediction
+print preds
 
 # Calculate accuration
 acc = 0.0

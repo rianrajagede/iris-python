@@ -81,12 +81,13 @@ alfa = 0.01
 epoch = 500
 neuron = [4, 3, 3] # arsitektur tiap layer
 
-# Initiate weight and bias, random normal antara -1..1
+# Initiate weight and bias with 0 value
 weight = [[0 for j in xrange(neuron[1])] for i in xrange(neuron[0])]
 weight_2 = [[0 for j in xrange(neuron[2])] for i in xrange(neuron[1])]
 bias = [0 for _ in xrange(neuron[1])]
 bias_2 = [0 for _ in xrange(neuron[2])]
 
+# Initiate weight with random between -1.0 ... 1.0
 for i in xrange(neuron[0]):
     for j in xrange(neuron[1]):
         weight[i][j] = 2*random.random()-1

@@ -15,5 +15,5 @@ This is a collection of simple and easy to read program for Iris dataset classif
 [iris_keras]:https://github.com/rianrajagede/iris-python/blob/master/Keras/iris_keras.py
 [iris_lasagne]:https://github.com/rianrajagede/iris-python/blob/master/Lasagne/iris_lasagne.py
 [iris_scikit]:https://github.com/rianrajagede/iris-python/blob/master/Python/iris_scikit.py
-[iris_plain]:https://github.com/rianrajagede/iris-python/blob/master/Python/iris_plain.py
-[iris_plain_2]:https://github.com/rianrajagede/iris-python/blob/master/Python/iris_plain_2.py
+[iris_plain]:https://github.com/rianrajagede/iris-python/blob/master/Python/iris_plain_mlp.py
+[iris_plain_2]:https://github.com/rianrajagede/iris-python/blob/master/Python/iris_plain_slp.py

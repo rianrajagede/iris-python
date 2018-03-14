@@ -40,7 +40,7 @@ epoch = 400
 best result = 96.67%
 """
 
-def matrix_mul_bias(A, B, bias): # Fungsi perkalian matrix + bias (untuk Testing)
+def matrix_mul_bias(A, B, bias): # Matrix multiplication (for Testing)
     C = [[0 for i in xrange(len(B[0]))] for i in xrange(len(A))]    
     for i in xrange(len(A)):
         for j in xrange(len(B[0])):
@@ -49,7 +49,7 @@ def matrix_mul_bias(A, B, bias): # Fungsi perkalian matrix + bias (untuk Testing
             C[i][j] += bias[j]
     return C
 
-def vec_mat_bias(A, B, bias): # Fungsi perkalian vector dengan matrix + bias
+def vec_mat_bias(A, B, bias): # Vector (A) x matrix (B) multiplication
     C = [0 for i in xrange(len(B[0]))]
     for j in xrange(len(B[0])):
         for k in xrange(len(B)):
@@ -58,15 +58,15 @@ def vec_mat_bias(A, B, bias): # Fungsi perkalian vector dengan matrix + bias
     return C
 
 
-def mat_vec(A, B): # Fungsi perkalian matrix dengan vector (untuk backprop)
+def mat_vec(A, B): # Matrix (A) x vector (B) multipilicatoin (for backprop)
     C = [0 for i in xrange(len(A))]
     for i in xrange(len(A)):
         for j in xrange(len(B)):
             C[i] += A[i][j] * B[j]
     return C
 
-def sigmoid(A, deriv=False): # Fungsi aktivasi sigmoid
-    if deriv: # kalau sedang backprop pakai turunan sigmoid
+def sigmoid(A, deriv=False):
+    if deriv: # derivation of sigmoid (for backprop)
         for i in xrange(len(A)):
             A[i] = A[i] * (1 - A[i])
     else:
@@ -77,7 +77,7 @@ def sigmoid(A, deriv=False): # Fungsi aktivasi sigmoid
 # Define parameter
 alfa = 0.005
 epoch = 400
-neuron = [4, 4, 3] # arsitektur tiap layer
+neuron = [4, 4, 3] # number of neuron each layer
 
 # Initiate weight and bias with 0 value
 weight = [[0 for j in xrange(neuron[1])] for i in xrange(neuron[0])]
@@ -138,7 +138,7 @@ for e in xrange(epoch):
     
     cost_total /= len(train_X)
     if(e % 100 == 0):
-        print cost_total # Print cost untuk memantau training
+        print cost_total
 
 """
 SECTION 3 : Testing

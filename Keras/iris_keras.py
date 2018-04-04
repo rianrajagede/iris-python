@@ -63,9 +63,9 @@ SECTION 3 : Testing model
 datatest = pd.read_csv('../Datasets/iris/iris_test.csv')
 
 #change string value to numeric
-datatest.set_value(datatest['species']=='Iris-setosa',['species'],0)
-datatest.set_value(datatest['species']=='Iris-versicolor',['species'],1)
-datatest.set_value(datatest['species']=='Iris-virginica',['species'],2)
+datatrain.loc[datatrain['species']=='Iris-setosa', 'species']=0
+datatrain.loc[datatrain['species']=='Iris-versicolor', 'species']=1
+datatrain.loc[datatrain['species']=='Iris-virginica', 'species']=2
 datatest = datatest.apply(pd.to_numeric)
 
 #change dataframe to array

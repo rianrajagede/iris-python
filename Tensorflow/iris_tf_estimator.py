@@ -46,6 +46,16 @@ There are three steps before build a tf estimator models:
 1. Define input function
 2. Define feature columns
 3. Define an estimator
+
+Multilayer perceptron model, with one hidden layer.
+input layer : 4 neuron, represents the feature of Iris
+hidden layer : 10 neuron, activation using ReLU
+output layer : 3 neuron, represents the class of Iris, Softmax Layer
+
+optimizer = stochastic gradient descent with no batch-size
+loss function = categorical cross entropy
+learning rate = 0.001
+epoch = 500
 """
 
 import tensorflow as tf

@@ -17,6 +17,7 @@ This is a collection of simple and easy to read program for Iris dataset classif
 
 ## Tensorflow
 - [Simple Neural Net for Iris dataset using Tensorflow][iris_tf] (Multilayer perceptron model, with one hidden layer)
+- [Simple Neural Net for Iris dataset using Tensorflow Estimator][iris_tf_estimator] (Multilayer perceptron model, with one hidden layer)
 
 [iris_keras]:https://github.com/rianrajagede/iris-python/blob/master/Keras/iris_keras.py
 [iris_lasagne]:https://github.com/rianrajagede/iris-python/blob/master/Lasagne/iris_lasagne.py
@@ -25,3 +26,4 @@ This is a collection of simple and easy to read program for Iris dataset classif
 [iris_plain_2]:https://github.com/rianrajagede/iris-python/blob/master/Python/iris_plain_slp.py
 [iris_pytorch]:https://github.com/rianrajagede/iris-python/blob/master/Pytorch/iris_pytorch.py
 [iris_tf]:https://github.com/rianrajagede/iris-python/blob/master/Tensorflow/iris_tf.py
+[iris_tf_estimator]:https://github.com/rianrajagede/iris-python/blob/master/Tensorflow/iris_tf_estimator.py

@@ -14,7 +14,7 @@ datatrain.loc[datatrain['species']=='Iris-virginica', 'species']=2
 datatrain = datatrain.apply(pd.to_numeric)
 
 # Change dataframe to array
-datatrain_array = datatrain.as_matrix()
+datatrain_array = datatrain.values
 
 # Split x and y (feature and target)
 X_train, X_test, y_train, y_test = train_test_split(datatrain_array[:,:4],
@@ -37,7 +37,11 @@ epoch = 500
 
 from sklearn.neural_network import MLPClassifier
 
-mlp = MLPClassifier(hidden_layer_sizes=(10),solver='sgd',learning_rate_init=0.01,max_iter=500)
+mlp = MLPClassifier(hidden_layer_sizes=(10),
+                    solver='sgd',
+                    learning_rate_init=0.01,
+                    max_iter=500,
+                    random_state=113)
 
 # Train the model
 mlp.fit(X_train, y_train)
@@ -49,7 +53,7 @@ sl = 5.8
 sw = 4
 pl = 1.2
 pw = 0.2
-data = [sl,sw,pl,pw]
+data = [[sl,sw,pl,pw]]
 print mlp.predict(data)
 
 

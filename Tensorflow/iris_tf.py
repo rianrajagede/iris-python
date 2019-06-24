@@ -1,3 +1,6 @@
+from __future__ import print_function
+from builtins import range
+
 """
 SECTION 1 : Load and setup data for training
 
@@ -17,7 +20,7 @@ datatrain.loc[datatrain['species']=='Iris-virginica', 'species']=2
 datatrain = datatrain.apply(pd.to_numeric)
 
 #change dataframe to array
-datatrain_array = datatrain.as_matrix()
+datatrain_array = datatrain.values
 
 #split x and y (feature and target)
 xtrain = datatrain_array[:,:4]
@@ -91,7 +94,7 @@ datatest.loc[datatest['species']=='Iris-virginica', 'species']=2
 datatest = datatest.apply(pd.to_numeric)
 
 #change dataframe to array
-datatest_array = datatest.as_matrix()
+datatest_array = datatest.values
 
 #split x and y (feature and target)
 xtest = datatest_array[:,:4]

@@ -1,3 +1,6 @@
+from __future__ import print_function
+from builtins import range
+
 """
 SECTION 1 : Load and setup data for training
 
@@ -17,7 +20,7 @@ datatrain.loc[datatrain['species']=='Iris-virginica', 'species']=2
 datatrain = datatrain.apply(pd.to_numeric)
 
 #change dataframe to array
-datatrain_array = datatrain.as_matrix()
+datatrain_array = datatrain.values
 
 #split x and y (feature and target)
 xtrain = datatrain_array[:,:4]
@@ -66,11 +69,11 @@ train_model = theano.function([input_val,target_val],loss,allow_input_downcast=T
 test_model = theano.function([input_val],output_val,allow_input_downcast=True)
 
 #train
-for _ in xrange(500):   
+for _ in range(500):   
     loss_val = train_model(xtrain,ytrain)
     prediction = np.argmax(test_model(xtrain),axis=1)
     accuration = 100*np.mean(ytrain == prediction)
-    print "Epoch " + str(_+1) + "/" + str(500) + " - loss: " + str(loss_val) + " - accuration: " + str(accuration)
+    print("Epoch " + str(_+1) + "/" + str(500) + " - loss: " + str(loss_val) + " - accuration: " + str(accuration))
     
 """
 SECTION 3 : Testing model
@@ -85,7 +88,7 @@ datatest.loc[datatest['species']=='Iris-virginica', 'species']=2
 datatest = datatest.apply(pd.to_numeric)
 
 #change dataframe to array
-datatest_array = datatest.as_matrix()
+datatest_array = datatest.values
 
 #split x and y (feature and target)
 xtest= datatest_array[:,:4]
@@ -96,8 +99,8 @@ prediction = np.argmax(test_model(xtest),axis=1)
 
 #get accuration
 accuration = 100*np.mean(ytest == prediction)
-print "Test Accuration : "+str(accuration)
-print "Prediction :"
-print prediction
-print "Target :"
-print np.asarray(ytest,dtype="int32")
+print("Test Accuration : "+str(accuration))
+print("Prediction :")
+print(prediction)
+print("Target :")
+print(np.asarray(ytest,dtype="int32"))

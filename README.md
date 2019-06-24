@@ -1,6 +1,12 @@
 # Simple Sample Codes for Iris Dataset Classification
 This is a collection of simple and easy-to-read program, for Iris dataset classification.
-These are some different types of libraries available so that you can see the difference between one and another for the same usage.
+These are some different types of libraries available so that you can see the implementation difference between one and another for the same usage.
+
+## Required Packages
+
+Please install `requirements.txt` file in each folder
+
+---
 
 ## Keras
 - [Simple Neural Net for Iris dataset using Keras][iris_keras] (Multilayer perceptron model, with one hidden layer)

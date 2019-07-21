@@ -115,14 +115,14 @@ for e in range(epoch):
         # Cost function, Square Root Eror
         eror = 0
         for i in range(3):
-            eror +=  0.5 * (target[i] - X_2[i]) ** 2 
-        cost_total += eror
+            eror +=  (target[i] - X_2[i]) ** 2 
+        cost_total += eror * 1 / 3
 
         # Backward propagation
         # Update weight_2 and bias_2 (layer 2)
         delta_2 = []
         for j in range(neuron[2]):
-            delta_2.append(-1 * (target[j]-X_2[j]) * X_2[j] * (1-X_2[j]))
+            delta_2.append(-1 * 2. / neuron[2] * (target[j]-X_2[j]) * X_2[j] * (1-X_2[j]))
 
         for i in range(neuron[1]):
             for j in range(neuron[2]):

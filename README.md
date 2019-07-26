@@ -8,7 +8,7 @@ Please install `requirements.txt` file in each folder
 
 ---
 
-## Keras
+## Keras (using Tensorflow backend)
 - [Simple Neural Net for Iris dataset using Keras][iris_keras] (Multilayer perceptron model, with one hidden layer)
 
 ## Lasagne

@@ -81,7 +81,6 @@ for epoch in range(num_epoch):
     loss.backward()
     optimizer.step()
     acc = 100 * torch.sum(Y==torch.max(out.data, 1)[1]).double() / len(Y)
-    print(type(acc.item()))
     print ('Epoch [%d/%d] Loss: %.4f   Acc: %.4f' 
                    %(epoch+1, num_epoch, loss.item(), acc.item()))
 

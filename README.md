@@ -26,6 +26,7 @@ Please install `requirements.txt` file in each folder
 ## Tensorflow
 - [Simple Neural Net for Iris dataset using Tensorflow][iris_tf] (Multilayer perceptron model, with one hidden layer)
 - [Simple Neural Net for Iris dataset using Tensorflow Estimator][iris_tf_estimator] (Multilayer perceptron model, with one hidden layer)
+- [Simple Neural Net for Iris dataset using Tensorflow version 2.x][iris_tf_2] (Multilayer perceptron model, with one hidden layer)
 
 [iris_keras]:https://github.com/rianrajagede/iris-python/blob/master/Keras/iris_keras.py
 [iris_lasagne]:https://github.com/rianrajagede/iris-python/blob/master/Lasagne/iris_lasagne.py
@@ -34,5 +35,6 @@ Please install `requirements.txt` file in each folder
 [iris_plain]:https://github.com/rianrajagede/iris-python/blob/master/Python/iris_plain_mlp.py
 [iris_plain_2]:https://github.com/rianrajagede/iris-python/blob/master/Python/iris_plain_slp.py
 [iris_pytorch]:https://github.com/rianrajagede/iris-python/blob/master/Pytorch/iris_pytorch.py
-[iris_tf]:https://github.com/rianrajagede/iris-python/blob/master/Tensorflow/iris_tf.py
+[iris_tf]:https://github.com/rianrajagede/iris-python/blob/master/Tensorflow/iris_tf_v1.py
 [iris_tf_estimator]:https://github.com/rianrajagede/iris-python/blob/master/Tensorflow/iris_tf_estimator.py
+[iris_tf_2]:https://github.com/rianrajagede/iris-python/blob/master/Tensorflow/iris_tf_v2.py

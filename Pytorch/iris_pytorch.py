@@ -31,13 +31,13 @@ SECTION 2 : Build and Train Model
 
 Multilayer perceptron model, with one hidden layer.
 input layer : 4 neuron, represents the feature of Iris
-hidden layer : 10 neuron, activation using ReLU
+hidden layer : 3 neuron, activation using ReLU
 output layer : 3 neuron, represents the class of Iris
 
 optimizer = stochastic gradient descent with no batch-size
 loss function = categorical cross entropy
 learning rate = 0.01
-epoch = 500
+epoch = 50
 """
 
 import torch

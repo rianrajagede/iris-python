@@ -46,9 +46,9 @@ import torch.nn.functional as F
 torch.manual_seed(1234)
 
 #hyperparameters
-hl = 10
+hl = 3
 lr = 0.01
-num_epoch = 500
+num_epoch = 50
 
 #build model
 class Net(nn.Module):
@@ -80,8 +80,8 @@ for epoch in range(num_epoch):
     loss = criterion(out, Y)
     loss.backward()
     optimizer.step()
-    acc = 100 * torch.sum(Y==torch.max(out.data, 1)[1]) / len(Y)
-
+    acc = 100 * torch.sum(Y==torch.max(out.data, 1)[1]).double() / len(Y)
+    print(type(acc.item()))
     print ('Epoch [%d/%d] Loss: %.4f   Acc: %.4f' 
                    %(epoch+1, num_epoch, loss.item(), acc.item()))
 
@@ -112,4 +112,4 @@ out = net(X)
 _, predicted = torch.max(out.data, 1)
 
 #get accuration
-print('Accuracy of the network %d %%' % (100 * torch.sum(Y==predicted) / len(Y)))
+print('Accuracy of the network %.4f %%' % (100 * torch.sum(Y==predicted).double() / len(Y)))

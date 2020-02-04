@@ -43,7 +43,6 @@ epoch = 500
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.autograd import Variable
 torch.manual_seed(1234)
 
 #hyperparameters
@@ -72,8 +71,8 @@ optimizer = torch.optim.SGD(net.parameters(), lr=lr)
 
 #train
 for epoch in range(num_epoch):
-    X = Variable(torch.Tensor(xtrain).float())
-    Y = Variable(torch.Tensor(ytrain).long())
+    X = torch.Tensor(xtrain).float()
+    Y = torch.Tensor(ytrain).long()
 
     #feedforward - backprop
     optimizer.zero_grad()
@@ -81,10 +80,11 @@ for epoch in range(num_epoch):
     loss = criterion(out, Y)
     loss.backward()
     optimizer.step()
+    acc = 100 * torch.sum(Y==torch.max(out.data, 1)[1]) / len(Y)
 
-    if (epoch) % 50 == 0:
-        print ('Epoch [%d/%d] Loss: %.4f' 
-                   %(epoch+1, num_epoch, loss.item()))
+    print ('Epoch [%d/%d] Loss: %.4f   Acc: %.4f' 
+                   %(epoch+1, num_epoch, loss.item(), acc.item()))
+
 
 """
 SECTION 3 : Testing model
@@ -106,10 +106,10 @@ xtest = datatest_array[:,:4]
 ytest = datatest_array[:,4]
 
 #get prediction
-X = Variable(torch.Tensor(xtest).float())
+X = torch.Tensor(xtest).float()
 Y = torch.Tensor(ytest).long()
 out = net(X)
 _, predicted = torch.max(out.data, 1)
 
 #get accuration
-print('Accuracy of the network %d %%' % (100 * torch.sum(Y==predicted) / 30))
+print('Accuracy of the network %d %%' % (100 * torch.sum(Y==predicted) / len(Y)))

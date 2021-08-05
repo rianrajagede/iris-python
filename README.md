@@ -2,6 +2,8 @@
 This is a collection of simple and easy-to-read program, for Iris dataset classification.
 These are some different types of libraries available so that you can see the implementation difference between one and another for the same usage.
 
+> Check another dataset: [Palmer Penguin Dataset](https://github.com/rianrajagede/penguin-python) which is slightly more complex than Iris dataset
+
 ## Required Packages
 
 Please install `requirements.txt` file in each folder
